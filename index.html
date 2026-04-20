@@ -8,56 +8,79 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
-<style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* NAVBAR */
+.nav {
+  position: sticky;
+  top: 0;
+  background: rgba(15, 23, 42, 0.9);
+  backdrop-filter: blur(10px);
+  padding: 10px 20px;
+  z-index: 1000;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0f172a;
-      color: #e2e8f0;
-    }
-
-    header {
-  height: 100vh;
+.nav-container {
+  max-width: 900px;
+  margin: auto;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  background: linear-gradient(135deg, #0f172a, #1e293b);
-  text-align: center;
-  padding: 20px;
 }
 
-header h1 {
-  font-size: 3.5rem;
-  margin-bottom: 10px;
-}
-
-header p {
-  font-size: 1.2rem;
+.nav a {
   color: #94a3b8;
-    }
-.btn {
-  margin-top: 20px;
-  padding: 12px 25px;
-  background: #38bdf8;
-  color: #0f172a;
+  margin-left: 15px;
   text-decoration: none;
-  border-radius: 6px;
-  margin-right: 10px;
-  transition: 0.3s;
+  font-size: 0.9rem;
 }
 
-.btn:hover {
-  background: #0ea5e9;
+.nav a:hover {
+  color: #38bdf8;
+}
+
+.logo {
+  font-weight: 600;
+  color: #38bdf8;
+}
+
+/* HEADER (more compact + aligned) */
+header {
+  min-height: 55vh;
+  padding: 30px 15px;
+}
+
+header img {
+  width: 100px;
+  margin-bottom: 12px;
+}
+
+/* GRID LAYOUT */
+.grid {
+  display: grid;
+  gap: 20px;
+}
+
+@media (min-width: 768px) {
+  .grid-2 {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* PROJECT CARDS CLEANER */
+.project {
+  background: #1e293b;
+  padding: 15px;
+  border-radius: 10px;
+  transition: 0.2s;
+}
+
+.project:hover {
+  transform: translateY(-3px);
+}
+
+/* TEXT SPACING TIGHT */
+p {
+  line-height: 1.5;
+  font-size: 0.95rem;
 }
     section {
       padding: 60px 20px;
@@ -113,7 +136,17 @@ header p {
 </head>
 
 <body>
-
+<nav class="nav">
+  <div class="nav-container">
+    <span class="logo">PB</span>
+    <div>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
 <header>
   <h1>Pelumi Bello</h1>
   <p>Technical Specialist | Aspiring Data Protection/ Information Governance Officer | Project Administrator</p>
@@ -141,24 +174,20 @@ Microsoft 365 Administration	| Entra ID | Intune | Security & Compliance | Power
   </p>
 </section>
 
-<section id="projects">
+<section id="projects" class="fade-in">
   <h2>Projects</h2>
 
-  <div class="project">
-    <h3>Modern Workplace Deployment</h3>
-    <p>
-      Designed and implemented a secure M365 environment, including identity management, device compliance, collaboration tools, and security controls using Entra ID, Intune, and Microsoft Defender.
-    </p>
-  </div>
+  <div class="grid grid-2">
+    <div class="project">
+      <h3>Modern Workplace Deployment</h3>
+      <p>Secure M365 environment with identity, compliance, and endpoint management.</p>
+    </div>
 
-  
-  <div class="project">
-    <h3>M365 Migration & Onboarding</h3>
-    <p>
-      Planned and simulated a hybrid-to-cloud migration strategy, including identity setup, phased mailbox migration, Teams rollout, and security implementation.
-    </p>
+    <div class="project">
+      <h3>M365 Migration</h3>
+      <p>Hybrid-to-cloud migration with Teams rollout and security controls.</p>
+    </div>
   </div>
-
 </section>
 
 <section id="approach">
@@ -168,10 +197,10 @@ Microsoft 365 Administration	| Entra ID | Intune | Security & Compliance | Power
   </p>
 </section>
 
-<section id="contact">
+<section id="contact" class="fade-in">
   <h2>Contact</h2>
-  <p>Email: pelumi25@hotmail.com</p>
-  <p>LinkedIn: https://www.linkedin.com/in/pelumibolanle/</p>
+  <p>📧 pelumi25@hotmail.com</p>
+  <p>🔗 linkedin.com/in/pelumibolanle</p>
 </section>
 
 <footer>
